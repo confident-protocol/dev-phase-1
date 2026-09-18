@@ -1,0 +1,46 @@
+[
+  {
+    "type": "function",
+    "name": "batchAddEmployees",
+    "stateMutability": "nonpayable",
+    "inputs": [
+      { "name": "wallets", "type": "address[]" },
+      { "name": "nameHashes", "type": "bytes32[]" },
+      { "name": "roleHashes", "type": "bytes32[]" },
+      { "name": "salaryCiphers", "type": "bytes32[]" },
+      { "name": "fheProofs", "type": "bytes[]" },
+      { "name": "chainIdHints", "type": "uint64[]" }
+    ],
+    "outputs": []
+  },
+  {
+    "type": "function",
+    "name": "runPayroll",
+    "stateMutability": "nonpayable",
+    "inputs": [
+      { "name": "runId", "type": "bytes32" },
+      { "name": "rosterRoot", "type": "bytes32" },
+      { "name": "zkProof", "type": "bytes" },
+      { "name": "publicInputs", "type": "bytes32[]" },
+      { "name": "sourceChainId", "type": "uint64" },
+      { "name": "destChainId", "type": "uint64" }
+    ],
+    "outputs": []
+  },
+  {
+    "type": "function",
+    "name": "getSalaryCipher",
+    "stateMutability": "view",
+    "inputs": [{ "name": "id", "type": "uint256" }],
+    "outputs": [{ "name": "", "type": "bytes32" }]
+  },
+  {
+    "type": "event",
+    "name": "PayrollExecuted",
+    "inputs": [
+      { "name": "runId", "type": "bytes32", "indexed": true },
+      { "name": "rosterRoot", "type": "bytes32", "indexed": false },
+      { "name": "employeeCount", "type": "uint256", "indexed": false }
+    ]
+  }
+]
